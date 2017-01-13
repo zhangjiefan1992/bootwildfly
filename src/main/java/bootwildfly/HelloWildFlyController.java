@@ -29,6 +29,8 @@ public class HelloWildFlyController {
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
+		}finally{
+			DBUtils.release(res, stmt, conn);
 		}
 
 		return ("Hello, SpringBoot on Wildfly  user name :"+name+" password : "+password);
